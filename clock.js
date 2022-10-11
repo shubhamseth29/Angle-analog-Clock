@@ -1,14 +1,6 @@
 const timePointers = document.getElementsByClassName('time-pointers');
 const clockElement = document.getElementsByClassName('clock-container')[0];
 
-
-// This snippet plots all the time pointers for digits not mentioned 
-// and rotates them to form 360 degree circle.
-for (let i = 1; i < 60; i++) {
-  clockElement.innerHTML += "<div class='time-pointers'></div>";
-  timePointers[i].style.transform = 'rotate(' + 6 * i + 'deg)';
-}
-
 let hour = null;
 let second = null;
 let minute = null;
@@ -25,6 +17,20 @@ const customTime = {
 };
 
 
+/**
+ * This snippet plots all the time pointers for digits of clock
+ * and rotates each by 6 degrees to form 360 degree circle.
+ */
+for (let i = 1; i < 60; i++) {
+  clockElement.innerHTML += "<div class='time-pointers'></div>";
+  timePointers[i].style.transform = 'rotate(' + 6 * i + 'deg)';
+}
+
+/**
+ * This interval fucntion takes a callback and runs it every second, 
+ * the callback function checks which time is available custom(user entered)
+ * or current time and based on it moves hands of clock.
+ */
 
 setInterval(() => {
   let currentTime = new Date();
@@ -81,6 +87,12 @@ setInterval(() => {
   
 }, 1000);
 
+/**
+ * 
+ * @param {string} format 
+ * This is a common method used to take hour , minute and second format from user 
+ * and set clock according to that.
+ */
 function handleCustomTime(format) {
   if (format === 'hour') {
     const hourValue = document.getElementById('hour-input').value;
@@ -109,6 +121,9 @@ function handleCustomTime(format) {
   customTime.useCustomTime = true;
 }
 
+/**
+ * This method resets input fields and custom time entries.
+ */
 function reset() {
   customTime.useCustomTime = false;
   customTime.customHour = null;
@@ -119,6 +134,11 @@ function reset() {
   document.getElementById('second-input').value = '';
 }
 
+/**
+ * This method calculates the acute angle by subtracting 
+ * the angle between the hour hand and the minute hand.
+ * While printing time it checks and adds zero to minutes and seconds if greater than 10
+ */
 function getAcuteAngle() {
   const angle = Math.abs(hourRotationDegree - minuteRotationDegree);
   const acuteAngle = 360 - angle < angle ? 360 - angle : angle;
