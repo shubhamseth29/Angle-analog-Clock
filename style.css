@@ -102,12 +102,44 @@ body{
     left: 32px;
     top: 140px;
   }
+
+  .heading{
+    position: absolute;
+    top: 70px;
+    left: 100px;
+  }
+
+  .center-axle{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ccc;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 2px 4px -1px black;
+  }
   
   .time-pointers {
     position: absolute;
     z-index: 2;
     width: 2px;
     height: 15px;
+    background: #666;
+    left: 50%;
+    margin-left: -1px;
+    transform-origin: 50% 150px;
+  }
+
+  .time-pointers:first-of-type {
+    position: absolute;
+    z-index: 2;
+    width: 4px;
+    height: 25px;
     background: #666;
     left: 50%;
     margin-left: -1px;
