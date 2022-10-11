@@ -1,0 +1,160 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(https://cdn.pixabay.com/photo/2016/03/27/07/32/clouds-1282314_960_720.jpg);
+    background-repeat: no-repeat;
+    background-size: 3000px 1000px;
+    height: 100vh;
+    width: 100vw;
+}
+
+.custom-time{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-container {
+    width: 300px;
+    height: 300px;
+    margin: 8% auto 0;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  
+  .hour-hand {
+    position: absolute;
+    z-index: 5;
+    width: 4px;
+    height: 65px;
+    background: #333;
+    top: 79px;
+    transform-origin: 50% 72px;
+    left: 50%;
+    margin-left: -2px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+  
+  .minute-hand {
+    position: absolute;
+    z-index: 6;
+    width: 4px;
+    height: 100px;
+    background: #666;
+    top: 46px;
+    left: 50%;
+    margin-left: -2px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: 50% 105px;
+  }
+  
+  .second-hand {
+    position: absolute;
+    z-index: 7;
+    width: 2px;
+    height: 120px;
+    background: pink;
+    top: 26px;
+    lefT: 50%;
+    margin-left: -1px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform-origin: 50% 125px;
+  }
+  
+  span {
+    display: inline-block;
+    position: absolute;
+    color: #333;
+    font-size: 22px;
+    font-weight: 700;
+    z-index: 4;
+  }
+  
+  .hour-12 {
+    top: 30px;
+    left: 50%;
+    margin-left: -9px;
+  }
+  .hour-3 {
+    top: 140px;
+    right: 30px;
+  }
+  .hour-6 {
+    bottom: 30px;
+    left: 50%;
+    margin-left: -5px;
+  }
+  .hour-9 {
+    left: 32px;
+    top: 140px;
+  }
+  
+  .time-pointers {
+    position: absolute;
+    z-index: 2;
+    width: 2px;
+    height: 15px;
+    background: #666;
+    left: 50%;
+    margin-left: -1px;
+    transform-origin: 50% 150px;
+  }
+  .time-pointers:nth-of-type(5n) {
+    position: absolute;
+    z-index: 2;
+    width: 4px;
+    height: 25px;
+    background: #666;
+    left: 50%;
+    margin-left: -1px;
+    transform-origin: 50% 150px;
+  }
+
+
+input {
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.angle {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#angle-container{
+    color: #666;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    padding-top: 5px;
+}
+
+button{
+    outline: none;
+    border-radius: 5px;
+    background: transparent;
+    border: 2px dotted pink;
+    cursor: pointer;
+}
+
+button:hover{
+    background: pink;
+}
